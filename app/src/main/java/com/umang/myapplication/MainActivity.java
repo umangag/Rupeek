@@ -46,6 +46,8 @@ public class MainActivity extends BaseActivity implements ApiResponse, SearchRes
         if (isNetworkAvailable(this)) {
             System.out.println("MainActivity.onCreate:::  Network Available");
             apiManager = new ApiManager(this);
+
+            showProgressDialog("Loading",false);
             apiManager.getData();
         } else {
             System.out.println("MainActivity.onCreate:::  Network Not Available");
@@ -67,6 +69,7 @@ public class MainActivity extends BaseActivity implements ApiResponse, SearchRes
     @Override
     public void apiCallback(ModelClass modelClass) {
         System.out.println("MainActivity.apiCallback:::: " + modelClass.cust_name);
+        hideProgressDialog();
         updateUI(modelClass);
     }
 
