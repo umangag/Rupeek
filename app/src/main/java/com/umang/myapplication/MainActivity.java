@@ -78,7 +78,7 @@ public class MainActivity extends BaseActivity implements ApiResponse, SearchRes
 
         this.modelClass = modelClass;
 
-        txtName.setText(modelClass.cust_name);
+        txtName.setText("Hello "+modelClass.cust_name);
 
         System.out.println("MainActivity.updateUI:::  " + modelClass.locations.size());
 
